@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="nguoidung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="tendangnhap" type="xs:string"/>
+        <xs:element name="email" type="xs:string"/>
+        <xs:element name="matkhau" type="xs:string"/>
+        <xs:element name="ngay_tao" type="xs:date"/>
+        <xs:element name="danhsachphat" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ten_danh_sach" type="xs:string"/>
+              <xs:element name="ngay_tao" type="xs:date"/>
+              <xs:element name="danhsach_baihat" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="baihat">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tieu_de" type="xs:string"/>
+                          <xs:element name="thoi_luong" type="xs:int"/>
+                          <xs:element name="ngay_phat_hanh" type="xs:date"/>
+                          <xs:element name="duong_dan_file" type="xs:string"/>
+                          <xs:element name="album">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ten_album" type="xs:string"/>
+                                <xs:element name="ngay_phat_hanh" type="xs:date"/>
+                                <xs:element name="anh_bia" type="xs:string"/>
+                              </xs:sequence>
+                              <xs:attribute name="album_id" type="xs:int" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="nghesi">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ten_nghesi" type="xs:string"/>
+                                <xs:element name="tieu_su" type="xs:string"/>
+                                <xs:element name="quoc_gia" type="xs:string"/>
+                              </xs:sequence>
+                              <xs:attribute name="nghesi_id" type="xs:int" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="theloai">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ten_theloai" type="xs:string"/>
+                                <xs:element name="mo_ta" type="xs:string"/>
+                              </xs:sequence>
+                              <xs:attribute name="theloai_id" type="xs:int" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="baihat_id" type="xs:int" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="ds_bai_hat" type="xs:int" use="required"/>
+                  <xs:attribute name="thu_tu" type="xs:int" use="optional"/>
+                  <xs:attribute name="ngay_them" type="xs:date" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="danhsach_id" type="xs:int" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="nguoidung_id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
