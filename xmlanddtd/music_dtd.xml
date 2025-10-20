@@ -1,49 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE nguoidung [
-    <!ELEMENT nguoidung (tendangnhap, email, matkhau, ngay_tao, danhsachphat+)>
-    <!ATTLIST nguoidung nguoidung_id ID #REQUIRED>
+<!DOCTYPE danhsach_nguoidung [
 
-    <!ELEMENT tendangnhap (#PCDATA)>
-    <!ELEMENT email (#PCDATA)>
-    <!ELEMENT matkhau (#PCDATA)>
-    <!ELEMENT ngay_tao (#PCDATA)>
+  <!--PHẦN TỬ GỐC -->
+  <!ELEMENT danhsach_nguoidung (nguoidung+)>
 
-    <!ELEMENT danhsachphat (ten_danh_sach, ngay_tao, danhsach_baihat+)>
-    <!ATTLIST danhsachphat danhsach_id ID #REQUIRED>
+  <!--NGƯỜI DÙNG -->
+  <!ELEMENT nguoidung (tendangnhap, email, matkhau, ngay_tao, danhsachphat+)>
+  <!ATTLIST nguoidung nguoidung_id CDATA #REQUIRED>
 
-    <!ELEMENT ten_danh_sach (#PCDATA)>
-    <!ELEMENT danhsach_baihat (baihat)>
-    <!ATTLIST danhsach_baihat ds_bai_hat ID #REQUIRED
-                               thu_tu CDATA #IMPLIED
-                               ngay_them CDATA #IMPLIED>
+  <!ELEMENT tendangnhap (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+  <!ELEMENT matkhau (#PCDATA)>
+  <!ELEMENT ngay_tao (#PCDATA)>
 
-    <!ELEMENT baihat (tieu_de, thoi_luong, ngay_phat_hanh, duong_dan_file, album, nghesi, theloai)>
-    <!ATTLIST baihat baihat_id ID #REQUIRED>
+  <!--DANH SÁCH PHÁT -->
+  <!ELEMENT danhsachphat (ten_danh_sach, ngay_tao, danhsach_baihat+)>
+  <!ATTLIST danhsachphat
+        danhsach_id CDATA #REQUIRED
+        nguoidung_ref CDATA #IMPLIED>
 
-    <!ELEMENT tieu_de (#PCDATA)>
-    <!ELEMENT thoi_luong (#PCDATA)>
-    <!ELEMENT ngay_phat_hanh (#PCDATA)>
-    <!ELEMENT duong_dan_file (#PCDATA)>
+  <!ELEMENT ten_danh_sach (#PCDATA)>
 
-    <!ELEMENT album (ten_album, ngay_phat_hanh, anh_bia)>
-    <!ATTLIST album album_id ID #REQUIRED>
+  <!-- DANH SÁCH BÀI HÁT -->
+  <!ELEMENT danhsach_baihat (baihat)>
+  <!ATTLIST danhsach_baihat
+        ds_bai_hat CDATA #REQUIRED
+        thu_tu CDATA #IMPLIED
+        ngay_them CDATA #IMPLIED
+        danhsach_ref CDATA #IMPLIED>
 
-    <!ELEMENT ten_album (#PCDATA)>
-    <!ELEMENT anh_bia (#PCDATA)>
+  <!-- BÀI HÁT -->
+  <!ELEMENT baihat (tieu_de, thoi_luong, ngay_phat_hanh, duong_dan_file, album, nghesi, theloai)>
+  <!ATTLIST baihat
+        baihat_id CDATA #REQUIRED
+        album_ref CDATA #IMPLIED
+        nghesi_ref CDATA #IMPLIED
+        theloai_ref CDATA #IMPLIED>
 
-    <!ELEMENT nghesi (ten_nghesi, tieu_su, quoc_gia)>
-    <!ATTLIST nghesi nghesi_id ID #REQUIRED>
+  <!ELEMENT tieu_de (#PCDATA)>
+  <!ELEMENT thoi_luong (#PCDATA)>
+  <!ELEMENT ngay_phat_hanh (#PCDATA)>
+  <!ELEMENT duong_dan_file (#PCDATA)>
 
-    <!ELEMENT ten_nghesi (#PCDATA)>
-    <!ELEMENT tieu_su (#PCDATA)>
-    <!ELEMENT quoc_gia (#PCDATA)>
+  <!--ALBUM -->
+  <!ELEMENT album (ten_album, ngay_phat_hanh, anh_bia)>
+  <!ATTLIST album album_id CDATA #REQUIRED>
 
-    <!ELEMENT theloai (ten_theloai, mo_ta)>
-    <!ATTLIST theloai theloai_id ID #REQUIRED>
+  <!ELEMENT ten_album (#PCDATA)>
+  <!ELEMENT anh_bia (#PCDATA)>
 
-    <!ELEMENT ten_theloai (#PCDATA)>
-    <!ELEMENT mo_ta (#PCDATA)>
+  <!--NGHỆ SĨ -->
+  <!ELEMENT nghesi (ten_nghesi, tieu_su, quoc_gia)>
+  <!ATTLIST nghesi nghesi_id CDATA #REQUIRED>
+
+  <!ELEMENT ten_nghesi (#PCDATA)>
+  <!ELEMENT tieu_su (#PCDATA)>
+  <!ELEMENT quoc_gia (#PCDATA)>
+
+  <!--THỂ LOẠI -->
+  <!ELEMENT theloai (ten_theloai, mo_ta)>
+  <!ATTLIST theloai theloai_id CDATA #REQUIRED>
+
+  <!ELEMENT ten_theloai (#PCDATA)>
+  <!ELEMENT mo_ta (#PCDATA)>
+
 ]>
+
+<danhsach_nguoidung>
 <nguoidung nguoidung_id="1">
         <tendangnhap>minhhoa</tendangnhap>
         <email>minhhoa@example.com</email>
