@@ -1,144 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:element name="nguoidung">
+  <!-- ROOT -->
+  <xs:element name="database">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="tendangnhap" type="xs:string"/>
-        <xs:element name="email" type="xs:string"/>
-        <xs:element name="matkhau" type="xs:string"/>
-        <xs:element name="ngay_tao" type="xs:date"/>
-
-        <xs:element name="danhsachphat" maxOccurs="unbounded">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ten_danh_sach" type="xs:string"/>
-              <xs:element name="ngay_tao" type="xs:date"/>
-
-              <xs:element name="danhsach_baihat" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="baihat">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="tieu_de" type="xs:string"/>
-                          <xs:element name="thoi_luong" type="xs:int"/>
-                          <xs:element name="ngay_phat_hanh" type="xs:date"/>
-                          <xs:element name="duong_dan_file" type="xs:string"/>
-
-                          <!-- Album -->
-                          <xs:element name="album">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="ten_album" type="xs:string"/>
-                                <xs:element name="ngay_phat_hanh" type="xs:date"/>
-                                <xs:element name="anh_bia" type="xs:string"/>
-                              </xs:sequence>
-                              <xs:attribute name="album_id" type="xs:int" use="required"/>
-                            </xs:complexType>
-                          </xs:element>
-
-                          <!-- Nghệ sĩ -->
-                          <xs:element name="nghesi">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="ten_nghesi" type="xs:string"/>
-                                <xs:element name="tieu_su" type="xs:string"/>
-                                <xs:element name="quoc_gia" type="xs:string"/>
-                              </xs:sequence>
-                              <xs:attribute name="nghesi_id" type="xs:int" use="required"/>
-                            </xs:complexType>
-                          </xs:element>
-
-                          <!-- Thể loại -->
-                          <xs:element name="theloai">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="ten_theloai" type="xs:string"/>
-                                <xs:element name="mo_ta" type="xs:string"/>
-                              </xs:sequence>
-                              <xs:attribute name="theloai_id" type="xs:int" use="required"/>
-                            </xs:complexType>
-                          </xs:element>
-
-                        </xs:sequence>
-                        <xs:attribute name="baihat_id" type="xs:int" use="required"/>
-                      </xs:complexType>
-                    </xs:element>
-                  </xs:sequence>
-
-                  <xs:attribute name="ds_bai_hat" type="xs:int" use="required"/>
-                  <xs:attribute name="thu_tu" type="xs:int" use="optional"/>
-                  <xs:attribute name="ngay_them" type="xs:date" use="optional"/>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-
-            <xs:attribute name="danhsach_id" type="xs:int" use="required"/>
-          </xs:complexType>
-        </xs:element>
-
+        <xs:element name="nguoidungs" type="NguoiDungList"/>
+        <xs:element name="theloais" type="TheLoaiList"/>
+        <xs:element name="nghesis" type="NgheSiList"/>
+        <xs:element name="albums" type="AlbumList"/>
+        <xs:element name="baihats" type="BaiHatList"/>
+        <xs:element name="baihat_nghesis" type="BaiHatNgheSiList"/>
+        <xs:element name="danhsachphats" type="DanhSachPhatList"/>
+        <xs:element name="danhsach_baihats" type="DanhSachBaiHatList"/>
       </xs:sequence>
-      <xs:attribute name="nguoidung_id" type="xs:int" use="required"/>
     </xs:complexType>
 
-    <!-- Khóa chính  -->
-    <xs:key name="PK_nguoidung">
-      <xs:selector xpath="."/>
-      <xs:field xpath="@nguoidung_id"/>
-    </xs:key>
+    <!-- ===== KHÓA CHÍNH ===== -->
+    <xs:unique name="keyNguoiDung">
+      <xs:selector xpath="nguoidungs/nguoidung"/>
+      <xs:field xpath="nguoidung_id"/>
+    </xs:unique>
 
-    <xs:key name="PK_danhsachphat">
-      <xs:selector xpath="danhsachphat"/>
-      <xs:field xpath="@danhsach_id"/>
-    </xs:key>
+    <xs:unique name="keyTheLoai">
+      <xs:selector xpath="theloais/theloai"/>
+      <xs:field xpath="theloai_id"/>
+    </xs:unique>
 
-    <xs:key name="PK_baihat">
-      <xs:selector xpath="danhsachphat/danhsach_baihat/baihat"/>
-      <xs:field xpath="@baihat_id"/>
-    </xs:key>
+    <xs:unique name="keyNgheSi">
+      <xs:selector xpath="nghesis/nghesi"/>
+      <xs:field xpath="nghesi_id"/>
+    </xs:unique>
 
-    <xs:key name="PK_album">
-      <xs:selector xpath="danhsachphat/danhsach_baihat/baihat/album"/>
-      <xs:field xpath="@album_id"/>
-    </xs:key>
+    <xs:unique name="keyAlbum">
+      <xs:selector xpath="albums/album"/>
+      <xs:field xpath="album_id"/>
+    </xs:unique>
 
-    <xs:key name="PK_nghesi">
-      <xs:selector xpath="danhsachphat/danhsach_baihat/baihat/nghesi"/>
-      <xs:field xpath="@nghesi_id"/>
-    </xs:key>
+    <xs:unique name="keyBaiHat">
+      <xs:selector xpath="baihats/baihat"/>
+      <xs:field xpath="baihat_id"/>
+    </xs:unique>
 
-    <xs:key name="PK_theloai">
-      <xs:selector xpath="danhsachphat/danhsach_baihat/baihat/theloai"/>
-      <xs:field xpath="@theloai_id"/>
-    </xs:key>
+    <xs:unique name="keyDanhSachPhat">
+      <xs:selector xpath="danhsachphats/danhsachphat"/>
+      <xs:field xpath="danhsach_id"/>
+    </xs:unique>
 
-    <!-- Khóa ngoại -->
-    <xs:keyref name="FK_danhsachphat_nguoidung" refer="PK_nguoidung">
-      <xs:selector xpath="danhsachphat"/>
-      <xs:field xpath="../@nguoidung_id"/>
+    <!-- ===== KHÓA NGOẠI ===== -->
+    <xs:keyref name="fk_baihat_theloai" refer="keyTheLoai">
+      <xs:selector xpath="baihats/baihat"/>
+      <xs:field xpath="theloai_id"/>
     </xs:keyref>
 
-    <xs:keyref name="FK_danhsach_baihat_danhsachphat" refer="PK_danhsachphat">
-      <xs:selector xpath="danhsachphat/danhsach_baihat"/>
-      <xs:field xpath="../@danhsach_id"/>
+    <xs:keyref name="fk_baihat_album" refer="keyAlbum">
+      <xs:selector xpath="baihats/baihat"/>
+      <xs:field xpath="album_id"/>
     </xs:keyref>
 
-    <xs:keyref name="FK_baihat_album" refer="PK_album">
-      <xs:selector xpath="danhsachphat/danhsach_baihat/baihat"/>
-      <xs:field xpath="album/@album_id"/>
+    <xs:keyref name="fk_baihat_nghesi_baihat" refer="keyBaiHat">
+      <xs:selector xpath="baihat_nghesis/baihat_nghesi"/>
+      <xs:field xpath="baihat_id"/>
     </xs:keyref>
 
-    <xs:keyref name="FK_baihat_nghesi" refer="PK_nghesi">
-      <xs:selector xpath="danhsachphat/danhsach_baihat/baihat"/>
-      <xs:field xpath="nghesi/@nghesi_id"/>
+    <xs:keyref name="fk_baihat_nghesi_nghesi" refer="keyNgheSi">
+      <xs:selector xpath="baihat_nghesis/baihat_nghesi"/>
+      <xs:field xpath="nghesi_id"/>
     </xs:keyref>
 
-    <xs:keyref name="FK_baihat_theloai" refer="PK_theloai">
-      <xs:selector xpath="danhsachphat/danhsach_baihat/baihat"/>
-      <xs:field xpath="theloai/@theloai_id"/>
+    <xs:keyref name="fk_danhsachphat_nguoidung" refer="keyNguoiDung">
+      <xs:selector xpath="danhsachphats/danhsachphat"/>
+      <xs:field xpath="nguoidung_id"/>
     </xs:keyref>
 
+    <xs:keyref name="fk_danhsach_baihat_danhsach" refer="keyDanhSachPhat">
+      <xs:selector xpath="danhsach_baihats/danhsach_baihat"/>
+      <xs:field xpath="danhsach_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="fk_danhsach_baihat_baihat" refer="keyBaiHat">
+      <xs:selector xpath="danhsach_baihats/danhsach_baihat"/>
+      <xs:field xpath="baihat_id"/>
+    </xs:keyref>
   </xs:element>
+
+  <!-- ======== KIỂU DỮ LIỆU ======== -->
+
+  <xs:complexType name="NguoiDungList">
+    <xs:sequence>
+      <xs:element name="nguoidung" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nguoidung_id" type="xs:integer"/>
+            <xs:element name="tendangnhap" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="matkhau" type="xs:string"/>
+            <xs:element name="ngay_tao" type="xs:dateTime"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TheLoaiList">
+    <xs:sequence>
+      <xs:element name="theloai" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="theloai_id" type="xs:integer"/>
+            <xs:element name="ten_theloai" type="xs:string"/>
+            <xs:element name="mo_ta" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="NgheSiList">
+    <xs:sequence>
+      <xs:element name="nghesi" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nghesi_id" type="xs:integer"/>
+            <xs:element name="ten_nghesi" type="xs:string"/>
+            <xs:element name="tieu_su" type="xs:string" minOccurs="0"/>
+            <xs:element name="quoc_gia" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AlbumList">
+    <xs:sequence>
+      <xs:element name="album" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="album_id" type="xs:integer"/>
+            <xs:element name="ten_album" type="xs:string"/>
+            <xs:element name="ngay_phat_hanh" type="xs:date"/>
+            <xs:element name="anh_bia" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BaiHatList">
+    <xs:sequence>
+      <xs:element name="baihat" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="baihat_id" type="xs:integer"/>
+            <xs:element name="tieu_de" type="xs:string"/>
+            <xs:element name="thoi_luong" type="xs:integer"/>
+            <xs:element name="ngay_phat_hanh" type="xs:date"/>
+            <xs:element name="duong_dan_file" type="xs:string"/>
+            <xs:element name="album_id" type="xs:integer"/>
+            <xs:element name="theloai_id" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BaiHatNgheSiList">
+    <xs:sequence>
+      <xs:element name="baihat_nghesi" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="baihat_nghesi_id" type="xs:integer"/>
+            <xs:element name="baihat_id" type="xs:integer"/>
+            <xs:element name="nghesi_id" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DanhSachPhatList">
+    <xs:sequence>
+      <xs:element name="danhsachphat" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="danhsach_id" type="xs:integer"/>
+            <xs:element name="ten_danh_sach" type="xs:string"/>
+            <xs:element name="nguoidung_id" type="xs:integer"/>
+            <xs:element name="ngay_tao" type="xs:date"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DanhSachBaiHatList">
+    <xs:sequence>
+      <xs:element name="danhsach_baihat" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ds_baihat_id" type="xs:integer"/>
+            <xs:element name="danhsach_id" type="xs:integer"/>
+            <xs:element name="baihat_id" type="xs:integer"/>
+            <xs:element name="thu_tu" type="xs:integer"/>
+            <xs:element name="ngay_them" type="xs:date"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
 </xs:schema>
