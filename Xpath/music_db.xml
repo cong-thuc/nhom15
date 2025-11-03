@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="music_html.xslt"?>
+<database>
+  <!-- ========================= -->
+  <!-- BẢNG NGƯỜI DÙNG -->
+  <!-- ========================= -->
+  <nguoidungs>
+    <nguoidung>
+      <nguoidung_id>1</nguoidung_id>
+      <tendangnhap>nguyenvana</tendangnhap>
+      <email>vana@example.com</email>
+      <matkhau>123456</matkhau>
+      <ngay_tao>2024-01-05T09:30:00</ngay_tao>
+    </nguoidung>
+    <nguoidung>
+      <nguoidung_id>2</nguoidung_id>
+      <tendangnhap>tranthib</tendangnhap>
+      <email>thib@example.com</email>
+      <matkhau>abcdef</matkhau>
+      <ngay_tao>2024-02-10T14:20:00</ngay_tao>
+    </nguoidung>
+    <nguoidung>
+      <nguoidung_id>3</nguoidung_id>
+      <tendangnhap>leminhc</tendangnhap>
+      <email>minhc@example.com</email>
+      <matkhau>matkhau123</matkhau>
+      <ngay_tao>2024-03-01T08:45:00</ngay_tao>
+    </nguoidung>
+    <nguoidung>
+      <nguoidung_id>4</nguoidung_id>
+      <tendangnhap>phamhoangd</tendangnhap>
+      <email>hoangd@example.com</email>
+      <matkhau>hoangd2024</matkhau>
+      <ngay_tao>2024-03-25T11:00:00</ngay_tao>
+    </nguoidung>
+    <nguoidung>
+      <nguoidung_id>5</nguoidung_id>
+      <tendangnhap>nguyenthue</tendangnhap>
+      <email>thue@example.com</email>
+      <matkhau>pass1234</matkhau>
+      <ngay_tao>2024-04-02T15:10:00</ngay_tao>
+    </nguoidung>
+    <nguoidung>
+      <nguoidung_id>6</nguoidung_id>
+      <tendangnhap>maingocf</tendangnhap>
+      <email>ngocf@example.com</email>
+      <matkhau>123abc</matkhau>
+      <ngay_tao>2024-05-09T09:05:00</ngay_tao>
+    </nguoidung>
+    <nguoidung>
+      <nguoidung_id>7</nguoidung_id>
+      <tendangnhap>danghuyg</tendangnhap>
+      <email>huyg@example.com</email>
+      <matkhau>password</matkhau>
+      <ngay_tao>2024-06-12T16:40:00</ngay_tao>
+    </nguoidung>
+  </nguoidungs>
+
+  <!-- ========================= -->
+  <!-- BẢNG THỂ LOẠI -->
+  <!-- ========================= -->
+  <theloais>
+    <theloai>
+      <theloai_id>1</theloai_id>
+      <ten_theloai>Nhạc Trẻ</ten_theloai>
+      <mo_ta>Âm nhạc hiện đại, dành cho giới trẻ</mo_ta>
+    </theloai>
+    <theloai>
+      <theloai_id>2</theloai_id>
+      <ten_theloai>Bolero</ten_theloai>
+      <mo_ta>Nhạc trữ tình, sâu lắng</mo_ta>
+    </theloai>
+    <theloai>
+      <theloai_id>3</theloai_id>
+      <ten_theloai>Pop</ten_theloai>
+      <mo_ta>Âm nhạc phổ biến, dễ nghe</mo_ta>
+    </theloai>
+    <theloai>
+      <theloai_id>4</theloai_id>
+      <ten_theloai>Rock</ten_theloai>
+      <mo_ta>Nhạc mạnh mẽ, sôi động</mo_ta>
+    </theloai>
+    <theloai>
+      <theloai_id>5</theloai_id>
+      <ten_theloai>Rap</ten_theloai>
+      <mo_ta>Nhạc nói có nhịp điệu, cá tính</mo_ta>
+    </theloai>
+    <theloai>
+      <theloai_id>6</theloai_id>
+      <ten_theloai>EDM</ten_theloai>
+      <mo_ta>Nhạc điện tử, sôi động cho tiệc tùng</mo_ta>
+    </theloai>
+    <theloai>
+      <theloai_id>7</theloai_id>
+      <ten_theloai>Cổ Điển</ten_theloai>
+      <mo_ta>Nhạc giao hưởng, cổ điển châu Âu</mo_ta>
+    </theloai>
+  </theloais>
+
+  <!-- ========================= -->
+  <!-- BẢNG NGHỆ SĨ -->
+  <!-- ========================= -->
+  <nghesis>
+    <nghesi>
+      <nghesi_id>1</nghesi_id>
+      <ten_nghesi>Sơn Tùng M-TP</ten_nghesi>
+      <tieu_su>Ca sĩ, nhạc sĩ nổi tiếng Việt Nam</tieu_su>
+      <quoc_gia>Việt Nam</quoc_gia>
+    </nghesi>
+    <nghesi>
+      <nghesi_id>2</nghesi_id>
+      <ten_nghesi>Mỹ Tâm</ten_nghesi>
+      <tieu_su>Nữ ca sĩ nổi tiếng với giọng hát truyền cảm</tieu_su>
+      <quoc_gia>Việt Nam</quoc_gia>
+    </nghesi>
+    <nghesi>
+      <nghesi_id>3</nghesi_id>
+      <ten_nghesi>Đen Vâu</ten_nghesi>
+      <tieu_su>Rapper, nhà thơ đường phố</tieu_su>
+      <quoc_gia>Việt Nam</quoc_gia>
+    </nghesi>
+    <nghesi>
+      <nghesi_id>4</nghesi_id>
+      <ten_nghesi>Min</ten_nghesi>
+      <tieu_su>Ca sĩ nhạc Pop trẻ trung</tieu_su>
+      <quoc_gia>Việt Nam</quoc_gia>
+    </nghesi>
+    <nghesi>
+      <nghesi_id>5</nghesi_id>
+      <ten_nghesi>Jack 97</ten_nghesi>
+      <tieu_su>Ca sĩ, nhạc sĩ trẻ năng động</tieu_su>
+      <quoc_gia>Việt Nam</quoc_gia>
+    </nghesi>
+    <nghesi>
+      <nghesi_id>6</nghesi_id>
+      <ten_nghesi>Bích Phương</ten_nghesi>
+      <tieu_su>Ca sĩ nhạc trẻ</tieu_su>
+      <quoc_gia>Việt Nam</quoc_gia>
+    </nghesi>
+    <nghesi>
+      <nghesi_id>7</nghesi_id>
+      <ten_nghesi>Phan Mạnh Quỳnh</ten_nghesi>
+      <tieu_su>Nhạc sĩ và ca sĩ trữ tình</tieu_su>
+      <quoc_gia>Việt Nam</quoc_gia>
+    </nghesi>
+  </nghesis>
+
+  <!-- ========================= -->
+  <!-- BẢNG ALBUM -->
+  <!-- ========================= -->
+  <albums>
+    <album>
+      <album_id>1</album_id>
+      <ten_album>Chúng Ta Của Hiện Tại</ten_album>
+      <ngay_phat_hanh>2021-12-10</ngay_phat_hanh>
+      <anh_bia>chungtacuahientai.jpg</anh_bia>
+    </album>
+    <album>
+      <album_id>2</album_id>
+      <ten_album>My Soul 1981</ten_album>
+      <ngay_phat_hanh>2022-03-15</ngay_phat_hanh>
+      <anh_bia>mysoul1981.jpg</anh_bia>
+    </album>
+    <album>
+      <album_id>3</album_id>
+      <ten_album>Trốn Tìm</ten_album>
+      <ngay_phat_hanh>2021-08-05</ngay_phat_hanh>
+      <anh_bia>trontim.jpg</anh_bia>
+    </album>
+    <album>
+      <album_id>4</album_id>
+      <ten_album>Yêu 5</ten_album>
+      <ngay_phat_hanh>2020-04-20</ngay_phat_hanh>
+      <anh_bia>yeu5.jpg</anh_bia>
+    </album>
+    <album>
+      <album_id>5</album_id>
+      <ten_album>Em Gì Ơi</ten_album>
+      <ngay_phat_hanh>2019-10-10</ngay_phat_hanh>
+      <anh_bia>emgioi.jpg</anh_bia>
+    </album>
+    <album>
+      <album_id>6</album_id>
+      <ten_album>Đi Đu Đưa Đi</ten_album>
+      <ngay_phat_hanh>2019-07-01</ngay_phat_hanh>
+      <anh_bia>diduđuadi.jpg</anh_bia>
+    </album>
+    <album>
+      <album_id>7</album_id>
+      <ten_album>Có Chàng Trai Viết Lên Cây</ten_album>
+      <ngay_phat_hanh>2018-05-05</ngay_phat_hanh>
+      <anh_bia>cochangtrai.jpg</anh_bia>
+    </album>
+  </albums>
+
+  <!-- ========================= -->
+  <!-- BẢNG BÀI HÁT -->
+  <!-- ========================= -->
+  <baihats>
+    <baihat>
+      <baihat_id>1</baihat_id>
+      <tieu_de>Chúng Ta Của Hiện Tại</tieu_de>
+      <thoi_luong>250</thoi_luong>
+      <ngay_phat_hanh>2021-12-10</ngay_phat_hanh>
+      <duong_dan_file>chungtacuahientai.mp3</duong_dan_file>
+      <album_id>1</album_id>
+      <theloai_id>1</theloai_id>
+    </baihat>
+    <baihat>
+      <baihat_id>2</baihat_id>
+      <tieu_de>Hãy Trao Cho Anh</tieu_de>
+      <thoi_luong>240</thoi_luong>
+      <ngay_phat_hanh>2019-07-01</ngay_phat_hanh>
+      <duong_dan_file>haytraochoanh.mp3</duong_dan_file>
+      <album_id>1</album_id>
+      <theloai_id>6</theloai_id>
+    </baihat>
+    <baihat>
+      <baihat_id>3</baihat_id>
+      <tieu_de>Trốn Tìm</tieu_de>
+      <thoi_luong>230</thoi_luong>
+      <ngay_phat_hanh>2021-08-05</ngay_phat_hanh>
+      <duong_dan_file>trontim.mp3</duong_dan_file>
+      <album_id>3</album_id>
+      <theloai_id>5</theloai_id>
+    </baihat>
+    <baihat>
+      <baihat_id>4</baihat_id>
+      <tieu_de>Yêu 5</tieu_de>
+      <thoi_luong>220</thoi_luong>
+      <ngay_phat_hanh>2020-04-20</ngay_phat_hanh>
+      <duong_dan_file>yeu5.mp3</duong_dan_file>
+      <album_id>4</album_id>
+      <theloai_id>3</theloai_id>
+    </baihat>
+    <baihat>
+      <baihat_id>5</baihat_id>
+      <tieu_de>Em Gì Ơi</tieu_de>
+      <thoi_luong>210</thoi_luong>
+      <ngay_phat_hanh>2019-10-10</ngay_phat_hanh>
+      <duong_dan_file>emgioi.mp3</duong_dan_file>
+      <album_id>5</album_id>
+      <theloai_id>1</theloai_id>
+    </baihat>
+    <baihat>
+      <baihat_id>6</baihat_id>
+      <tieu_de>Đi Đu Đưa Đi</tieu_de>
+      <thoi_luong>200</thoi_luong>
+      <ngay_phat_hanh>2019-07-01</ngay_phat_hanh>
+      <duong_dan_file>diduđuadi.mp3</duong_dan_file>
+      <album_id>6</album_id>
+      <theloai_id>6</theloai_id>
+    </baihat>
+    <baihat>
+      <baihat_id>7</baihat_id>
+      <tieu_de>Có Chàng Trai Viết Lên Cây</tieu_de>
+      <thoi_luong>260</thoi_luong>
+      <ngay_phat_hanh>2018-05-05</ngay_phat_hanh>
+      <duong_dan_file>cochangtrai.mp3</duong_dan_file>
+      <album_id>7</album_id>
+      <theloai_id>2</theloai_id>
+    </baihat>
+  </baihats>
+
+  <!-- ========================= -->
+  <!-- BẢNG BÀI HÁT - NGHỆ SĨ -->
+  <!-- ========================= -->
+  <baihat_nghesis>
+    <baihat_nghesi><baihat_nghesi_id>1</baihat_nghesi_id><baihat_id>1</baihat_id><nghesi_id>1</nghesi_id></baihat_nghesi>
+    <baihat_nghesi><baihat_nghesi_id>2</baihat_nghesi_id><baihat_id>2</baihat_id><nghesi_id>1</nghesi_id></baihat_nghesi>
+    <baihat_nghesi><baihat_nghesi_id>3</baihat_nghesi_id><baihat_id>3</baihat_id><nghesi_id>3</nghesi_id></baihat_nghesi>
+    <baihat_nghesi><baihat_nghesi_id>4</baihat_nghesi_id><baihat_id>4</baihat_id><nghesi_id>4</nghesi_id></baihat_nghesi>
+    <baihat_nghesi><baihat_nghesi_id>5</baihat_nghesi_id><baihat_id>5</baihat_id><nghesi_id>5</nghesi_id></baihat_nghesi>
+    <baihat_nghesi><baihat_nghesi_id>6</baihat_nghesi_id><baihat_id>6</baihat_id><nghesi_id>6</nghesi_id></baihat_nghesi>
+    <baihat_nghesi><baihat_nghesi_id>7</baihat_nghesi_id><baihat_id>7</baihat_id><nghesi_id>7</nghesi_id></baihat_nghesi>
+  </baihat_nghesis>
+
+  <!-- ========================= -->
+  <!-- BẢNG DANH SÁCH PHÁT -->
+  <!-- ========================= -->
+  <danhsachphats>
+    <danhsachphat><danhsach_id>1</danhsach_id><ten_danh_sach>Yêu Thích Của An</ten_danh_sach><nguoidung_id>1</nguoidung_id><ngay_tao>2024-06-01</ngay_tao></danhsachphat>
+    <danhsachphat><danhsach_id>2</danhsach_id><ten_danh_sach>Buổi Sáng Năng Lượng</ten_danh_sach><nguoidung_id>2</nguoidung_id><ngay_tao>2024-06-02</ngay_tao></danhsachphat>
+    <danhsachphat><danhsach_id>3</danhsach_id><ten_danh_sach>Thư Giãn</ten_danh_sach><nguoidung_id>3</nguoidung_id><ngay_tao>2024-06-03</ngay_tao></danhsachphat>
+    <danhsachphat><danhsach_id>4</danhsach_id><ten_danh_sach>Làm Việc Hiệu Quả</ten_danh_sach><nguoidung_id>4</nguoidung_id><ngay_tao>2024-06-04</ngay_tao></danhsachphat>
+    <danhsachphat><danhsach_id>5</danhsach_id><ten_danh_sach>Nhạc Trẻ Hot</ten_danh_sach><nguoidung_id>5</nguoidung_id><ngay_tao>2024-06-05</ngay_tao></danhsachphat>
+    <danhsachphat><danhsach_id>6</danhsach_id><ten_danh_sach>Nhạc Chill</ten_danh_sach><nguoidung_id>6</nguoidung_id><ngay_tao>2024-06-06</ngay_tao></danhsachphat>
+    <danhsachphat><danhsach_id>7</danhsach_id><ten_danh_sach>Rap Việt</ten_danh_sach><nguoidung_id>7</nguoidung_id><ngay_tao>2024-06-07</ngay_tao></danhsachphat>
+  </danhsachphats>
+
+  <!-- ========================= -->
+  <!-- BẢNG DANH SÁCH - BÀI HÁT -->
+  <!-- ========================= -->
+  <danhsach_baihats>
+    <danhsach_baihat><ds_baihat_id>1</ds_baihat_id><danhsach_id>1</danhsach_id><baihat_id>1</baihat_id><thu_tu>1</thu_tu><ngay_them>2024-06-01</ngay_them></danhsach_baihat>
+    <danhsach_baihat><ds_baihat_id>2</ds_baihat_id><danhsach_id>1</danhsach_id><baihat_id>2</baihat_id><thu_tu>2</thu_tu><ngay_them>2024-06-01</ngay_them></danhsach_baihat>
+    <danhsach_baihat><ds_baihat_id>3</ds_baihat_id><danhsach_id>2</danhsach_id><baihat_id>3</baihat_id><thu_tu>1</thu_tu><ngay_them>2024-06-02</ngay_them></danhsach_baihat>
+    <danhsach_baihat><ds_baihat_id>4</ds_baihat_id><danhsach_id>3</danhsach_id><baihat_id>4</baihat_id><thu_tu>1</thu_tu><ngay_them>2024-06-03</ngay_them></danhsach_baihat>
+    <danhsach_baihat><ds_baihat_id>5</ds_baihat_id><danhsach_id>4</danhsach_id><baihat_id>5</baihat_id><thu_tu>1</thu_tu><ngay_them>2024-06-04</ngay_them></danhsach_baihat>
+    <danhsach_baihat><ds_baihat_id>6</ds_baihat_id><danhsach_id>5</danhsach_id><baihat_id>6</baihat_id><thu_tu>1</thu_tu><ngay_them>2024-06-05</ngay_them></danhsach_baihat>
+    <danhsach_baihat><ds_baihat_id>7</ds_baihat_id><danhsach_id>6</danhsach_id><baihat_id>7</baihat_id><thu_tu>1</thu_tu><ngay_them>2024-06-06</ngay_them></danhsach_baihat>
+  </danhsach_baihats>
+
+</database>
