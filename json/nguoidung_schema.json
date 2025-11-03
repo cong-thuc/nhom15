@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NguoiDung",
+  "type": "object",
+  "properties": {
+    "nguoidungs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nguoidung_id": { "type": "integer", "minimum": 1 },
+          "tendangnhap": { "type": "string", "minLength": 3 },
+          "email": { "type": "string", "format": "email" },
+          "matkhau": { "type": "string", "minLength": 6 },
+          "ngay_tao": { "type": "string", "format": "date-time" }
+        },
+        "required": ["nguoidung_id", "tendangnhap", "email", "matkhau", "ngay_tao"]
+      }
+    }
+  },
+  "required": ["nguoidungs"]
+}

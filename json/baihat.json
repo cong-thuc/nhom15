@@ -1,0 +1,11 @@
+{
+  "baihats": [
+    { "baihat_id": 1, "tieu_de": "Chúng Ta Của Hiện Tại", "thoi_luong": 250, "ngay_phat_hanh": "2021-12-10", "duong_dan_file": "chungtacuahientai.mp3", "album_id": 1, "theloai_id": 1 },
+    { "baihat_id": 2, "tieu_de": "Hãy Trao Cho Anh", "thoi_luong": 240, "ngay_phat_hanh": "2019-07-01", "duong_dan_file": "haytraochoanh.mp3", "album_id": 1, "theloai_id": 6 },
+    { "baihat_id": 3, "tieu_de": "Trốn Tìm", "thoi_luong": 230, "ngay_phat_hanh": "2021-08-05", "duong_dan_file": "trontim.mp3", "album_id": 3, "theloai_id": 5 },
+    { "baihat_id": 4, "tieu_de": "Yêu 5", "thoi_luong": 220, "ngay_phat_hanh": "2020-04-20", "duong_dan_file": "yeu5.mp3", "album_id": 4, "theloai_id": 3 },
+    { "baihat_id": 5, "tieu_de": "Em Gì Ơi", "thoi_luong": 210, "ngay_phat_hanh": "2019-10-10", "duong_dan_file": "emgioi.mp3", "album_id": 5, "theloai_id": 1 },
+    { "baihat_id": 6, "tieu_de": "Đi Đu Đưa Đi", "thoi_luong": 200, "ngay_phat_hanh": "2019-07-01", "duong_dan_file": "diduđuadi.mp3", "album_id": 6, "theloai_id": 6 },
+    { "baihat_id": 7, "tieu_de": "Có Chàng Trai Viết Lên Cây", "thoi_luong": 260, "ngay_phat_hanh": "2018-05-05", "duong_dan_file": "cochangtrai.mp3", "album_id": 7, "theloai_id": 2 }
+  ]
+}
