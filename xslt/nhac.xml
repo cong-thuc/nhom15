@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="music_xsd.xsd">
-
+<?xml-stylesheet type="text/xsl" href="music_html.xslt"?>
+<database>
   <!-- ========================= -->
   <!-- BẢNG NGƯỜI DÙNG -->
   <!-- ========================= -->
